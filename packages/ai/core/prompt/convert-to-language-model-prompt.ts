@@ -233,6 +233,14 @@ export function convertToLanguageModelMessage(
                     const url = new URL(part.file);
 
                     switch (url.protocol) {
+                      case 'gs:': {
+                        return {
+                          type: 'file',
+                          file: url,
+                          mimeType: part.mimeType,
+                        };
+                      }
+
                       case 'http:':
                       case 'https:': {
                         if (downloadedFiles == null) {
