@@ -1,6 +1,6 @@
 {
-  "name": "ai",
-  "version": "3.3.7",
+  "name": "explorator-ai",
+  "version": "3.3.8",
   "description": "Vercel AI SDK - The AI Toolkit for TypeScript and JavaScript",
   "license": "Apache-2.0",
   "sideEffects": false,
@@ -155,7 +155,7 @@
   "homepage": "https://sdk.vercel.ai/docs",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vercel/ai.git"
+    "url": "git+https://github.com/exploratortech/ai-sdk.git"
   },
   "bugs": {
     "url": "https://github.com/vercel/ai/issues"

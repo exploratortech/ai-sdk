@@ -54,6 +54,20 @@ export function convertToGoogleVertexContentRequest(
               break;
             }
 
+            case 'file': {
+              if (!(part.file instanceof URL)) {
+                throw new Error('File URLs are not supported');
+              }
+              parts.push({
+                fileData: {
+                  mimeType: part.mimeType ?? 'video/mp4',
+                  fileUri: part.file.toString(),
+                },
+              });
+
+              break;
+            }
+
             default: {
               const _exhaustiveCheck: never = part;
               throw new UnsupportedFunctionalityError({
@@ -62,7 +76,6 @@ export function convertToGoogleVertexContentRequest(
             }
           }
         }
-
         contents.push({ role: 'user', parts });
         break;
       }
