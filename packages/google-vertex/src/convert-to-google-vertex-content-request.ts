@@ -119,13 +119,16 @@ export function convertToGoogleVertexContentRequest(
         systemMessagesAllowed = false;
 
         contents.push({
-          role: 'user',
-          parts: content.map(part => ({
+          role: 'function',
+          parts: [{
             functionResponse: {
-              name: part.toolName,
-              response: part.result as object,
+              name: content[0].toolName,
+              response: {
+                name: content[0].toolName,
+                content: content[0].result as object,
+              },
             },
-          })),
+          }],
         });
         break;
       }
