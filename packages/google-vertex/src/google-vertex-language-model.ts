@@ -315,10 +315,10 @@ function prepareTools({
   }
 
   if (toolChoice == null || toolChoice.type === 'auto') {
-    const mappedTools: GoogleTool[] = [];
+    let mappedTools: GoogleTool[] = [];
 
     if (tools != null) {
-      [
+      mappedTools = [
         {
           functionDeclarations: tools.map(tool => ({
             name: tool.name,
